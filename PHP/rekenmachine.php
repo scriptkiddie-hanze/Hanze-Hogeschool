@@ -18,31 +18,31 @@ if(isset($_POST['submit'])){
 	$tweede= $_POST['tweede'];
 	$operator = $_POST["reken"];
 	
-	if(is_numeric($eerste) && is_numeric($tweede)){
+	if(ctype_alpha($eerste) && ctype_alpha($tweede)){
 		
 		switch($operator){
 			case "plus":
-			echo $eerste + $tweede;
-			break; 
+				echo $eerste + $tweede;
+				break; 
 			case "min":
-			echo $eerste - $tweede;
-			break;
+				echo $eerste - $tweede;
+				break;
 			case "keer":
-			echo $eerste * $tweede;
-			break; 
+				echo $eerste * $tweede;
+				break; 
 			case "delen":
 				if($tweede == 0){
-				die('Delen door 0 is niet mogelijk');
+					echo "Delen door 0 is niet mogelijk";
 				}else{
-				echo $eerste / $tweede;}
-			break;
+					echo $eerste / $tweede;}
+				break;
 			case "faculiteit":
-			$getal = 1;
+				$getal = 1;
 				for($i = $eerste ; $i > 0 ; $i--){
-				$getal = $getal*$i;
+					$getal =* &i;
 				}
-			echo $getal;
-			break;
+				echo $getal;
+				break;
 		}
 	}
 	else{
